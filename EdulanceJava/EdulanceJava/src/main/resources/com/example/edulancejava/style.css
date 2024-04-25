@@ -1,0 +1,60 @@
+.Button {
+    -fx-border-color: transparent;
+    -fx-background-color: white;
+    -fx-border-radius: 2px;
+}
+
+/* style.css */
+
+.list-cell {
+    -fx-background-color: #f9f9f9; /* Background color for each cell */
+    -fx-padding: 15px; /* Padding around each cell */
+    -fx-border-color: #eeeeee; /* Border color */
+    -fx-border-width: 0 0 1 0; /* Border width (bottom border only) */
+    -fx-background-radius: 5px; /* Rounded corners */
+}
+
+.list-cell:hover {
+    -fx-background-color: #f0f0f0; /* Background color on hover */
+}
+
+.list-view {
+    -fx-background-color: #ffffff; /* Background color for the entire ListView */
+}
+
+/* ScrollBar style */
+.list-view .scroll-bar {
+    -fx-background-color: transparent; /* Transparent background */
+}
+
+.list-view .scroll-bar:vertical {
+    -fx-padding: 0; /* Remove padding */
+}
+
+.list-view .scroll-bar .thumb {
+    -fx-background-color: #bbbbbb; /* Thumb color */
+    -fx-background-radius: 10px; /* Rounded corners */
+}
+
+.list-view .scroll-bar .thumb:hover {
+    -fx-background-color: #999999; /* Thumb color on hover */
+}
+
+.list-view .scroll-bar .track {
+    -fx-background-color: transparent; /* Transparent track */
+}
+
+.list-view .scroll-bar .increment-button,
+.list-view .scroll-bar .decrement-button {
+    -fx-padding: 5px; /* Adjust padding */
+}
+
+.list-view .scroll-bar .increment-arrow,
+.list-view .scroll-bar .decrement-arrow {
+    -fx-background-color: #bbbbbb; /* Arrow color */
+}
+
+.list-view .scroll-bar .increment-arrow:hover,
+.list-view .scroll-bar .decrement-arrow:hover {
+    -fx-background-color: #999999; /* Arrow color on hover */
+}
