@@ -18,7 +18,7 @@ public class BusinessController
     public void add(Business user) throws SQLException {
         ArrayList<Integer> id = new ArrayList<>();
         MySQLConnectors connection = new MySQLConnectors();
-        String query = "INSERT INTO global_user (name, family_name, image, phone_number, email, nationality, language, reputation, description, password,Role,Archieve) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,1,'ACTIVE')";
+        String query = "INSERT INTO global_user (name, family_name, image, phone_number, email, nationality, language, reputation, description, password,Roles,Archieve) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,1,'ACTIVE')";
         try (Connection conn = connection.getCnx();
              PreparedStatement statement = conn.prepareStatement(query)) {
             statement.setString(1, user.getName());
@@ -66,7 +66,7 @@ public class BusinessController
     {
         MySQLConnectors connection = new MySQLConnectors();
         ArrayList<Business> users = new ArrayList<>();
-        String query = "SELECT global_user.*,business.* from global_user INNER JOIN business on global_user.id = business.id where global_user.role = 1 and global_user.archieve = ?";
+        String query = "SELECT global_user.*,business.* from global_user INNER JOIN business on global_user.id = business.id where global_user.roles = 1 and global_user.archieve = ?";
         try (Connection conn = connection.getCnx();
              PreparedStatement statement = conn.prepareStatement(query)) {
             statement.setString(1,"ACTIVE");
@@ -166,7 +166,7 @@ public class BusinessController
     {
         MySQLConnectors connection = new MySQLConnectors();
         ArrayList<Business> users = new ArrayList<>();
-        String query = "SELECT * FROM global_user where role = 1 and Archieve = ?";
+        String query = "SELECT * FROM global_user where roles = 1 and Archieve = ?";
         try (Connection conn = connection.getCnx();
              PreparedStatement statement = conn.prepareStatement(query)) {
             statement.setString(1, "Deleted");

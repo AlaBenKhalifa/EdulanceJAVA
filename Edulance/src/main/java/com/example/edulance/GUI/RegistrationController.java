@@ -30,6 +30,7 @@ import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 
@@ -43,6 +44,9 @@ public class RegistrationController implements Initializable {
 
     @FXML
     private TextField FamilyName;
+
+    @FXML
+    private Label pwdv;
 
     @FXML
     private TextField Language;
@@ -67,11 +71,101 @@ public class RegistrationController implements Initializable {
     @FXML
     private ImageView imageView;
 
+    private boolean saved = false;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         imagePath = "C:\\Users\\alaed\\IdeaProjects\\Edulance\\src\\main\\resources\\com\\example\\edulance\\icons\\icons8-person-94.png";
         Image image = new Image(new File(imagePath).toURI().toString());
         imageView.setImage(image);
+        Password.textProperty().addListener((observable, oldValue, newValue) -> {
+            // If password is empty, clear the status label
+            if (newValue.isEmpty()) {
+                pwdv.setText("");
+            } else {
+                // Otherwise, check the strength of the password and update the status label
+                String strength = checkPasswordStrength(newValue,Name.getText(),FamilyName.getText());
+                pwdv.setText(strength);
+                if (strength.equals("Weak"))
+                    pwdv.setStyle("-fx-text-fill: red; -fx-font-weight: bold;");
+                if (strength.equals("Average"))
+                    pwdv.setStyle("-fx-text-fill: yellow; -fx-font-weight: bold;");
+                if (strength.equals("Strong"))
+                    pwdv.setStyle("-fx-text-fill: green; -fx-font-weight: bold;");
+            }
+        });
+    }
+
+    public static String checkPasswordStrength(String password,String Name,String FamilyName) {
+
+
+        if (isAverage(password, Name,FamilyName)) {
+            return "Average";
+        }
+
+        if (isWeak(password,Name,FamilyName)) {
+            return "Weak";
+        }
+
+        if (isStrong(password,Name,FamilyName)) {
+            return "Strong";
+        }
+
+        return "";
+    }
+
+    private static boolean isStrong(String password,String name,String familyName) {
+        if (name != null && !name.isEmpty() && password.toLowerCase().contains(name.toLowerCase())) {
+            return false;
+        }
+        if (familyName != null && !familyName.isEmpty() && password.toLowerCase().contains(familyName.toLowerCase())) {
+            return false;
+        }
+        // Check if password contains all of these 4 (number and a special character and a majiscule and minuscule)
+        if (password.matches(".*\\d.*") && password.matches(".*\\W.*") && password.matches(".*[a-z].*") && password.matches(".*[A-Z].*")) {
+            return true;
+        }
+        return false;
+    }
+
+    private static boolean isWeak(String password,String name,String familyName) {
+        for (int i = 0; i < password.length() - 2; i++) {
+            if ((password.charAt(i) + 1 == password.charAt(i + 1))
+                    && (password.charAt(i + 1) + 1 == password.charAt(i + 2))) {
+                return true;
+            }
+        }
+        if (!password.matches(".*\\d.*") || !password.matches(".*\\W.*") || !password.matches(".*[a-z].*") || !password.matches(".*[A-Z].*") || !password.matches(".*[A-Z].*")) {
+            return true;
+        }
+
+        if (name != null && !name.isEmpty() && password.toLowerCase().contains(name.toLowerCase())) {
+            return true;
+        }
+        if (familyName != null && !familyName.isEmpty() && password.toLowerCase().contains(familyName.toLowerCase())) {
+            return true;
+        }
+        return false;
+    }
+
+    private static boolean isAverage(String password,String name,String familyName) {
+
+        if (name != null && !name.isEmpty() && password.toLowerCase().contains(name.toLowerCase())) {
+            return false;
+        }
+        if (familyName != null && !familyName.isEmpty() && password.toLowerCase().contains(familyName.toLowerCase())) {
+            return false;
+        }
+        if(password.length() >=5){
+            int count = 0;
+            if (password.matches(".*\\d.*")) count++;
+            if (password.matches(".*\\W.*")) count++;
+            if (password.matches(".*[a-z].*")) count++;
+            if (password.matches(".*[A-Z].*")) count++;
+            return (count >= 2)&&(count < 4);
+        }
+        else
+            return false;
     }
 
     @FXML
@@ -127,25 +221,57 @@ public class RegistrationController implements Initializable {
             showAlert("Please fill out all required fields.");
             return;
         }
-        if(role.equals("Normal User")){
-            NormalUser user = new NormalUser(name, familyName, imagePath, phoneNumber, email, nationality, language, description, password);
-            NormalUserController usercontroller = new NormalUserController();
-            usercontroller.add(user);
+        if(pwdv.getText().equals("Weak")){
+            showAlert("Your Password is weak.");
+            return;
         }
-        else{
-            Business user = new Business(name, familyName, imagePath, phoneNumber, email, nationality, language, description, password);
-            BusinessController usercontroller = new BusinessController();
-            usercontroller.add(user);
-        }
-        Stage stage = (Stage) Name.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/edulance/UI/AdminTables.fxml"));
-        Parent root = loader.load();
+        if(pwdv.getText().equals("Average")){
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Confirm Registration");
+            alert.setHeaderText("Your Password is Average. Do you want to register?");
+            alert.setContentText("Choose.");
 
-        // Create a new scene with the loaded FXML
-        Scene scene = new Scene(root);
-        // Set the new scene to the stage
-        stage.setScene(scene);
-        stage.show();
+            alert.showAndWait().ifPresent(response -> {
+                if (response == ButtonType.OK) {
+                    saved = true;
+                }
+            });
+        }
+
+        if(pwdv.getText().equals("Strong")){
+            saved = true;
+        }
+
+        if(saved == true) {
+            FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/com/example/edulance/UI/EmailVerification.fxml"));
+            Parent roott = loaderr.load();
+            EmailVerification emailverification = loaderr.getController();
+            emailverification.initData(generateRandomNumber(100000,999999),email);
+            Stage stagee = new Stage();
+            stagee.setTitle("Email Verification");
+            stagee.setScene(new Scene(roott));
+            stagee.showAndWait();
+            if (emailverification.isSaved()) {
+                if (role.equals("Normal User")) {
+                    NormalUser user = new NormalUser(name, familyName, imagePath, phoneNumber, email, nationality, language, description, password);
+                    NormalUserController usercontroller = new NormalUserController();
+                    usercontroller.add(user);
+                } else {
+                    Business user = new Business(name, familyName, imagePath, phoneNumber, email, nationality, language, description, password);
+                    BusinessController usercontroller = new BusinessController();
+                    usercontroller.add(user);
+                }
+                Stage stage = (Stage) Name.getScene().getWindow();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/edulance/UI/AdminTables.fxml"));
+                Parent root = loader.load();
+
+                // Create a new scene with the loaded FXML
+                Scene scene = new Scene(root);
+                // Set the new scene to the stage
+                stage.setScene(scene);
+                stage.show();
+            }
+        }
     }
 
     public void showAlert(String message) {
@@ -172,6 +298,11 @@ public class RegistrationController implements Initializable {
             Image image = new Image(new File(imagePath).toURI().toString());
             imageView.setImage(image);
         }
+    }
+
+    private int generateRandomNumber(int min, int max) {
+        Random random = new Random();
+        return random.nextInt((max - min) + 1) + min;
     }
 
     @FXML

@@ -14,6 +14,7 @@ module com.example.edulance {
     requires org.apache.httpcomponents.httpclient;
     requires org.apache.httpcomponents.httpcore;
     requires java.desktop;
+    requires java.mail;
 
     opens com.example.edulance to javafx.fxml;
     exports com.example.edulance;

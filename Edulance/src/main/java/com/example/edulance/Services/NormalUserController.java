@@ -16,7 +16,7 @@ public class NormalUserController {
     public void add(NormalUser user) throws SQLException {
         ArrayList<Integer> id = new ArrayList<>();
         MySQLConnectors connection = new MySQLConnectors();
-        String query = "INSERT INTO global_user (name, family_name, image, phone_number, email, nationality, language, reputation, description, password,Role,Archieve) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,0,'ACTIVE')";
+        String query = "INSERT INTO global_user (name, family_name, image, phone_number, email, nationality, language, reputation, description, password,Roles,Archieve) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,0,'ACTIVE')";
         try (Connection conn = connection.getCnx();
              PreparedStatement statement = conn.prepareStatement(query)) {
             statement.setString(1, user.getName());
@@ -63,7 +63,7 @@ public class NormalUserController {
     {
         MySQLConnectors connection = new MySQLConnectors();
         ArrayList<NormalUser> users = new ArrayList<>();
-        String query = "SELECT global_user.*, normal_user.* FROM global_user INNER JOIN normal_user ON global_user.id = normal_user.id where global_user.role = 0 and global_user.Archieve = ?";
+        String query = "SELECT global_user.*, normal_user.* FROM global_user INNER JOIN normal_user ON global_user.id = normal_user.id where global_user.roles = 0 and global_user.Archieve = ?";
         try (Connection conn = connection.getCnx();
              PreparedStatement statement = conn.prepareStatement(query)) {
             statement.setString(1, "ACTIVE");
@@ -95,7 +95,7 @@ public class NormalUserController {
     {
         MySQLConnectors connection = new MySQLConnectors();
         ArrayList<NormalUser> users = new ArrayList<>();
-        String query = "SELECT * FROM global_user where role = 0 and Archieve = ?";
+        String query = "SELECT * FROM global_user where roles = 0 and Archieve = ?";
         try (Connection conn = connection.getCnx();
              PreparedStatement statement = conn.prepareStatement(query)) {
             statement.setString(1, "Deleted");

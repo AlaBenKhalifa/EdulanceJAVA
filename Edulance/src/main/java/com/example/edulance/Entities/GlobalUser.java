@@ -3,9 +3,6 @@ package com.example.edulance.Entities;
 public class GlobalUser {
 
     private Integer id;
-
-
-
     private String name;
     private String familyName;
     private String image;

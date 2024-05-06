@@ -70,7 +70,6 @@ public class EditAdmin {
 
 
     public void initData(Admin user){
-        // Populate the text fields with complaint data
         saved = true;
         id = user.getId();
         Name.setText(user.getName());

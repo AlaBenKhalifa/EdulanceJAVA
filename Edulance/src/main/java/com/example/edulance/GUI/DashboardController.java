@@ -2,6 +2,7 @@ package com.example.edulance.GUI;
 
 import com.example.edulance.Entities.NormalUser;
 import com.example.edulance.Services.NormalUserController;
+import com.example.edulance.Tools.UserSession;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -86,6 +87,7 @@ public class DashboardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        System.out.println(UserSession.getUser().getName());
         NormalUserController controller = new NormalUserController();
 
         List<NormalUser> list = controller.show();

@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class MySQLConnectors {
-    private String url = "jdbc:mysql://localhost:3306/edulancejava";
+    private String url = "jdbc:mysql://localhost:3306/edulance3a3";
 
     private String login="root";
     private String pwd="";

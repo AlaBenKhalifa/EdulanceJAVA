@@ -16,7 +16,7 @@ public class AdminController {
     public void add(Admin user) throws SQLException {
         ArrayList<Integer> id = new ArrayList<>();
         MySQLConnectors connection = new MySQLConnectors();
-        String query = "INSERT INTO global_user (name, family_name, image, phone_number, email, nationality, language, reputation, description, password,Role,Archieve) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,3,'ACTIVE')";
+        String query = "INSERT INTO global_user (name, family_name, image, phone_number, email, nationality, language, reputation, description, password,Roles,Archieve) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,3,'ACTIVE')";
         try (Connection conn = connection.getCnx();
              PreparedStatement statement = conn.prepareStatement(query)) {
             statement.setString(1, user.getName());
@@ -83,7 +83,7 @@ public class AdminController {
     {
         MySQLConnectors connection = new MySQLConnectors();
         ArrayList<Admin> users = new ArrayList<>();
-        String query = "SELECT * FROM global_user where role = 3 and Archieve = ?";
+        String query = "SELECT * FROM global_user where roles = 3 and Archieve = ?";
         try (Connection conn = connection.getCnx();
              PreparedStatement statement = conn.prepareStatement(query)) {
             statement.setString(1, "ACTIVE");
@@ -114,7 +114,7 @@ public class AdminController {
     {
         MySQLConnectors connection = new MySQLConnectors();
         ArrayList<Admin> users = new ArrayList<>();
-        String query = "SELECT * FROM global_user where role = 3 and Archieve = ?";
+        String query = "SELECT * FROM global_user where roles = 3 and Archieve = ?";
         try (Connection conn = connection.getCnx();
              PreparedStatement statement = conn.prepareStatement(query)) {
             statement.setString(1, "Deleted");

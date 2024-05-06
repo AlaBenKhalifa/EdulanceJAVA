@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="738.0" prefWidth="1177.0" style="-fx-background-color: #adffc3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edulance.GUI.LoginController">
+   <right>
+      <AnchorPane prefHeight="738.0" prefWidth="550.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
+         <children>
+            <PasswordField fx:id="Password" layoutX="119.0" layoutY="401.0" prefHeight="55.0" prefWidth="291.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #adffc3; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </PasswordField>
+            <Button layoutX="131.0" layoutY="512.0" mnemonicParsing="false" onAction="#Login" prefHeight="62.0" prefWidth="266.0" style="-fx-background-color: #adffc3;" text="Login">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="118.0" fitWidth="120.0" layoutX="216.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/signup.png" />
+               </image>
+            </ImageView>
+            <Text fill="#89bc95" layoutX="194.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" textAlignment="CENTER" wrappingWidth="161.8292236328125">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Text>
+            <TextField fx:id="Email" layoutX="119.0" layoutY="320.0" prefHeight="53.0" prefWidth="293.0" promptText="Email" style="-fx-background-color: transparent; -fx-border-color: #adffc3; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font size="18.0" />
+               </font></TextField>
+         </children>
+      </AnchorPane>
+   </right>
+   <center>
+      <ImageView fitHeight="232.0" fitWidth="449.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@../icons/Logo.png" />
+         </image>
+      </ImageView>
+   </center>
+</BorderPane>

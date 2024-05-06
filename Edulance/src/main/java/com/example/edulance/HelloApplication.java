@@ -15,7 +15,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         MySQLConnectors connector = new MySQLConnectors();
         Connection connection = connector.getCnx();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("UI/AdminTables.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("UI/ForgetPasswordEmail.fxml"));
         Parent root = fxmlLoader.load();
 
         Scene scene = new Scene(root);
