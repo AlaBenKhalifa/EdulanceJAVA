@@ -4,6 +4,7 @@ import com.example.edulancejava.Connectors.AddJobQuery;
 import com.example.edulancejava.Connectors.Entities.Offre;
 import com.example.edulancejava.Connectors.MySQLConnectors;
 import com.example.edulancejava.Connectors.UserSession;
+import com.example.edulancejava.Controller.Complaint_Gestion.ComplaintController1;
 import com.microsoft.cognitiveservices.speech.*;
 import com.microsoft.cognitiveservices.speech.audio.AudioConfig;
 import javafx.collections.FXCollections;
@@ -41,7 +42,8 @@ import java.util.regex.Pattern;
 public class AddJobController implements Initializable {
     @FXML
     private TextField titlefield;
-
+    @FXML
+    private BorderPane container;
     @FXML
     private DatePicker datefield;
 
@@ -133,7 +135,7 @@ public class AddJobController implements Initializable {
         String title = titlefield.getText();
         String commentText = descriptionfield.getText();
         String sanitizedComment = replaceBadWords(commentText, prohibitedWords);
-        //System.out.println(sanitizedComment);
+        System.out.println(sanitizedComment);
         boolean containsProhibitedWords = !sanitizedComment.equals(commentText);
 
         if (containsProhibitedWords) {
@@ -221,12 +223,12 @@ public class AddJobController implements Initializable {
 
     // Function to replace bad words with asterisks
     private String replaceBadWords(String commentText, List<String> prohibitedWords) {
-        // Create a pattern to match the prohibited words without word boundaries
-        String patternString = String.join("|", prohibitedWords);
-        Pattern pattern = Pattern.compile("(" + patternString + ")", Pattern.CASE_INSENSITIVE);
+        // Create a pattern to match the prohibited words with word boundaries
+        String patternString = "\\b(" + String.join("|", prohibitedWords) + ")\\b";
+        Pattern pattern = Pattern.compile(patternString, Pattern.CASE_INSENSITIVE);
 
         // Replace the bad words with asterisks
-        Matcher matcher = pattern.matcher(commentText); // Change here
+        Matcher matcher = pattern.matcher(commentText);
         StringBuffer result = new StringBuffer();
 
         while (matcher.find()) {
@@ -244,6 +246,7 @@ public class AddJobController implements Initializable {
     private List<String> loadProhibitedWords(String filePath) {
         List<String> prohibitedWords = new ArrayList<>();
 
+        System.out.println(prohibitedWords);
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = reader.readLine()) != null) {
@@ -255,6 +258,7 @@ public class AddJobController implements Initializable {
         }
 
         return prohibitedWords;
+
     }
 
     private boolean descriptionExists(String description) {
@@ -337,12 +341,19 @@ public class AddJobController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/edulancejava/Offre/DisplayJob.fxml"));
             Parent root = loader.load();
 
+            // If you need to access the controller of the loaded FXML, you can do it like this:
+            DisplayJobController displayJobController = loader.getController();
+
+            // Set the loaded view in your container (assuming container is a BorderPane)
+            container.setCenter(root);
+
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
-            stage.setTitle("list jobb");
+            stage.setTitle("List Job");
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 }

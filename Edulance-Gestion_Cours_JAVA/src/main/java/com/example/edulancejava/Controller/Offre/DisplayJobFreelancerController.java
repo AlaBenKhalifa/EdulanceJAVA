@@ -83,6 +83,11 @@ public class DisplayJobFreelancerController implements Initializable {
                     HBox buttonContainer = new HBox(10, ContactButton);
                     buttonContainer.setAlignment(Pos.CENTER_RIGHT);
 
+
+
+
+
+
                     cardContainer.getChildren().addAll(titleLabel, categoryLabel, descriptionLabel, expirationDateLabel, salaryLabel, languageLabel, experienceLabel, typeLabel, buttonContainer);
                     setGraphic(cardContainer);
                 }

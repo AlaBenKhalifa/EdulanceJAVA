@@ -10,97 +10,8 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.text.Font?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="738.0" prefWidth="1177.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edulancejava.Controller.Offre.DisplayJobFreelancerController">
-    <left>
-        <VBox prefHeight="730.0" prefWidth="111.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
-            <children>
-                <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="54.0" prefWidth="98.0" styleClass="Button" stylesheets="@style.css" text="Button">
-                    <graphic>
-                        <ImageView fitHeight="44.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../example/icons/icons8-squared-menu-64.png" />
-                            </image></ImageView>
-                    </graphic>
-                    <VBox.margin>
-                        <Insets top="20.0" />
-                    </VBox.margin>
-                </Button>
-                <Button fx:id="Button" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="30.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="98.0" styleClass="Button" stylesheets="@style.css" text="Button">
-                    <graphic>
-                        <ImageView fitHeight="44.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../example/icons/icons8-triste-64.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <VBox.margin>
-                        <Insets top="20.0" />
-                    </VBox.margin>
-                </Button>
-                <Button contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="84.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="98.0" styleClass="Button" stylesheets="@style.css" text="Button">
-                    <graphic>
-                        <ImageView fitHeight="44.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../example/icons/icons8-trouver-un-emploi-correspondant-64.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </Button>
-                <Button contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="139.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="98.0" styleClass="Button" stylesheets="@style.css" text="Button">
-                    <graphic>
-                        <ImageView fitHeight="44.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../example/icons/icons8-calendrier-64.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </Button>
-                <Button contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="193.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="98.0" styleClass="Button" stylesheets="@style.css" text="Button">
-                    <graphic>
-                        <ImageView fitHeight="44.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../example/icons/icons8-trouver-un-emploi-correspondant-64.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </Button>
-                <Button contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="248.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="98.0" styleClass="Button" stylesheets="@style.css" text="Button">
-                    <graphic>
-                        <ImageView fitHeight="44.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../example/icons/icons8-bavarder-64.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </Button>
-                <Button contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="302.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="98.0" styleClass="Button" stylesheets="@style.css" text="Button">
-                    <graphic>
-                        <ImageView fitHeight="44.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../example/icons/icons8-ajouter.gif" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <VBox.margin>
-                        <Insets top="260.0" />
-                    </VBox.margin>
-                </Button>
-                <Button contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="356.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="98.0" styleClass="Button" stylesheets="@style.css" text="Button">
-                    <graphic>
-                        <ImageView fitHeight="44.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../example/icons/icons8-application-bascule-64 (1).png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </Button>
-            </children>
-        </VBox>
-    </left>
-    <center>
+   <top>
         <AnchorPane prefHeight="738.0" prefWidth="1210.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
             <children>
                 <AnchorPane prefHeight="728.0" prefWidth="230.0">
@@ -227,5 +138,16 @@
                 </children>
             </VBox>
         </AnchorPane>
-    </center>
+   </top>
+   <center>
+          <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="2.0" prefWidth="0.0" styleClass="Button" stylesheets="@style.css" text="Button" BorderPane.alignment="CENTER">
+              <graphic>
+                  <ImageView fitHeight="1.0" fitWidth="1.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                          <Image url="@../example/icons/icons8-application-bascule-64 (1).png" />
+                      </image>
+                  </ImageView>
+              </graphic>
+          </Button>
+   </center>
 </BorderPane>

@@ -12,6 +12,9 @@ module com.course.edulance {
     requires java.desktop;
     requires client.jar.sdk;
     requires twilio;
+    requires kernel;
+    requires layout;
+    requires activation;
 
 
     opens com.example.edulancejava.Connectors.Entities to javafx.base;

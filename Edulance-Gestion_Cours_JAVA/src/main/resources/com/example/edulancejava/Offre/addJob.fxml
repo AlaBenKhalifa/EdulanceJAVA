@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="738.0" prefWidth="1177.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edulancejava.Controller.Offre.AddJobController">
+<BorderPane fx:id="container" maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="738.0" prefWidth="1177.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edulancejava.Controller.Offre.AddJobController">
 
     <center>
         <AnchorPane prefHeight="738.0" prefWidth="1210.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
@@ -46,7 +46,7 @@
                         <Font name="Century Gothic" size="10.0" />
                     </font>
                 </Label>
-                <Pane layoutX="233.0" layoutY="69.0" prefHeight="654.0" prefWidth="727.0">
+                <Pane layoutX="315.0" layoutY="69.0" prefHeight="654.0" prefWidth="727.0">
                     <children>
                         <Text fill="#4fa095" layoutX="300.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADD JOB" wrappingWidth="56.53668212890625">
                             <font>
@@ -146,14 +146,14 @@
                             </value>
                         </ComboBox>
 
-                                    <Button fx:id="btnAddJob" layoutX="417.0" layoutY="603.0" onAction="#AddJob" prefHeight="36.0" prefWidth="123.0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 5px;" text="Add Job" />
+                                    <Button fx:id="btnAddJob" layoutX="364.0" layoutY="603.0" onAction="#AddJob" prefHeight="36.0" prefWidth="123.0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 5px;" text="Add Job" />
                   <Text fill="#153462" layoutX="325.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category">
                      <font>
                         <Font name="System Bold Italic" size="12.0" />
                      </font>
                   </Text>
                   <ComboBox fx:id="categoryfield" layoutX="325.0" layoutY="319.0" prefHeight="25.0" prefWidth="255.0" />
-                  <Button fx:id="btnAddJob1" layoutX="227.0" layoutY="603.0" onAction="#switchToAnotherViewListJob" prefHeight="36.0" prefWidth="123.0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: #78847a; -fx-text-fill: white; -fx-background-radius: 5px;" text="View List" />
+                  <Button fx:id="btnAddJob1" layoutX="174.0" layoutY="603.0" onAction="#switchToAnotherViewListJob" prefHeight="36.0" prefWidth="123.0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: #78847a; -fx-text-fill: white; -fx-background-radius: 5px;" text="View List" />
                   <Button fx:id="sttButton" layoutX="591.0" layoutY="139.0" mnemonicParsing="false" onMouseClicked="#stt" prefHeight="25.0" prefWidth="57.0" text="Record" />
                     </children>
                 </Pane>

@@ -12,6 +12,12 @@ public class GlobalUser {
     public int getRoles() {
         return Roles;
     }
+    public GlobalUser(int id, String name,String description,String email) {
+        this.id = id;
+        this.name = name;
+        this.description=description;
+        this.email=email;
+    }
 
     public void setRoles(int roles) {
         Roles = roles;

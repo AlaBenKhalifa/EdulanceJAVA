@@ -108,7 +108,6 @@ public class DisplayJobAdminController implements Initializable {
             return new SimpleObjectProperty<>(approveButton);
         });
 
-        loadJobs();
     }
     private void handleApproveButtonAction(ActionEvent event, Offre offre) {
         try {
@@ -191,7 +190,7 @@ public class DisplayJobAdminController implements Initializable {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(senderEmail));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipientEmail));
-            message.setSubject("Thank you for your feedback");
+            message.setSubject("Your Job has been approved !");
             String messageText = "<html>" +
                     "<head>" +
                     "<style>" +

@@ -1,31 +1,27 @@
 package com.example.edulancejava.Controller.Offre;
 
-import com.example.edulancejava.Connectors.DeleteJOBQuery;
 import com.example.edulancejava.Connectors.Entities.Offre;
 import com.example.edulancejava.Connectors.GetJobsQuery;
+import com.example.edulancejava.Connectors.MySQLConnectors;
 import com.example.edulancejava.Connectors.UserSession;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -38,6 +34,7 @@ public class DisplayJobBusinessController implements Initializable {
         private Pagination pagination;
 
         private final int itemsPerPage = 11;
+
         private ObservableList<Offre> jobList = FXCollections.observableArrayList();
 
         @Override
@@ -75,7 +72,9 @@ public class DisplayJobBusinessController implements Initializable {
                         Label experienceLabel = createLabel("Experience Level: " + offre.getExperienceLevel(), "#555555", FontWeight.NORMAL, 14);
                         Label typeLabel = createLabel("Type of Offer: " + offre.getTypeOffre(), "#555555", FontWeight.NORMAL, 14);
 
-                        Button ApplyButton = createButton("Apply", "#4CAF50", event -> handleApplyButton(event));
+                        Button ApplyButton = new Button("Apply");
+                        //ApplyButton.getStyleClass().add("edit-button");
+                        ApplyButton.setOnAction(event -> handleApplyButton(offre));
 
                         HBox buttonContainer = new HBox(10, ApplyButton);
                         buttonContainer.setAlignment(Pos.CENTER_RIGHT);
@@ -110,10 +109,41 @@ public class DisplayJobBusinessController implements Initializable {
             }
         }
 
-    @FXML
-    void handleApplyButton(ActionEvent event) {
-        sendSMS();
+
+    public void addOffreglobaluser(int offreId, int userId) {
+        MySQLConnectors connection = new MySQLConnectors();
+        String query = "INSERT INTO offre_global_user (offre_id, global_user_id) VALUES (?, ?)";
+
+        try (Connection conn = connection.getCnx();
+             PreparedStatement statement = conn.prepareStatement(query)) {
+
+            statement.setInt(1, offreId); // Set the value of the first parameter (offre_id)
+            statement.setInt(2, userId); // Set the value of the second parameter (global_user_id)
+            statement.executeUpdate();
+
+            System.out.println("Offre added successfully!");
+        } catch (SQLException e) {
+            System.out.println("Error adding offre: " + e.getMessage());
+        }
     }
+
+
+    @FXML
+    void handleApplyButton(Offre selectedOffre) {
+        if (selectedOffre != null) {
+            int offreId = selectedOffre.getId();
+            int userId = UserSession.getUser().getId();
+
+            System.out.println("Offre ID: " + offreId);
+            System.out.println("User ID: " + userId);
+            addOffreglobaluser(offreId, userId);
+
+             sendSMS();
+        } else {
+            System.out.println("No Offre selected");
+        }
+    }
+
 
     private void sendSMS() {
         com.twilio.Twilio.init("AC07750a961cb0daec3d886928fe7f5887", "ea1951b9544b3103fb41a5b4bfaabc89");
@@ -129,6 +159,7 @@ public class DisplayJobBusinessController implements Initializable {
 
         // You can add further logic here, such as handling success/failure of sending the message
     }
+
 
     private void loadJobs() {
             try {
