@@ -1,0 +1,38 @@
+.background_nav{
+    -fx-background-color:#008d7d;
+    -fx-spacing: 40px;
+    -fx-padding: 40 0 0 0;
+    -fx-start-margin: 0;
+}
+
+.header{
+    -fx-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-family: Arial;
+}
+.font{
+    -fx-font-family: Arial;
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-pref-height: 100%;
+}
+.font:hover{
+
+    -fx-background-color: #00594f;
+    -fx-text-fill: #35a8fa;
+    -fx-border-color: WHITE;
+    -fx-border-width: 0px 0px 0px 5px;
+}
+.font:focused{
+    -fx-text-fill: red;
+    -fx-background-color: white;
+    -fx-animation-name: fadeIn;
+    -fx-animation-duration: 4s;
+    -fx-animation-timing-function: ease-in;
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+

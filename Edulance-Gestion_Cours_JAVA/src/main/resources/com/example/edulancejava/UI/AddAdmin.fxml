@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="582.0" prefWidth="593.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edulancejava.GUI.AddAdmin">
+   <children>
+      <VBox layoutX="200.0" layoutY="80.0" spacing="20">
+         <children>
+            <VBox spacing="10" />
+            <VBox spacing="10">
+               <children>
+                  <HBox spacing="10" />
+               </children>
+            </VBox>
+            <HBox spacing="10">
+               <children>
+                  <Label fx:id="lblImagePath" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <ImageView fitHeight="37.0" fitWidth="42.0" layoutX="32.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../example/icons/signup.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="135.0" layoutY="45.0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333333;" text="Add Admin" />
+      <PasswordField fx:id="Password" layoutX="315.0" layoutY="160.0" prefHeight="26.0" prefWidth="197.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #adffc3; -fx-border-width: 0px 0px 2px 0px;">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </PasswordField>
+      <TextField fx:id="Email" layoutX="315.0" layoutY="109.0" prefHeight="30.0" prefWidth="194.0" promptText="Email" style="-fx-background-color: transparent; -fx-border-color: #adffc3; -fx-border-width: 0px 0px 2px 0px;" />
+      <TextField fx:id="Name" layoutX="54.0" layoutY="109.0" prefHeight="30.0" prefWidth="194.0" promptText="Name" style="-fx-background-color: transparent; -fx-border-color: #adffc3; -fx-border-width: 0px 0px 2px 0px;" />
+      <TextField fx:id="FamilyName" layoutX="54.0" layoutY="158.0" prefHeight="30.0" prefWidth="194.0" promptText="Family Name" style="-fx-background-color: transparent; -fx-border-color: #adffc3; -fx-border-width: 0px 0px 2px 0px;" />
+      <TextField fx:id="PhoneNumber" layoutX="54.0" layoutY="208.0" prefHeight="30.0" prefWidth="194.0" promptText="Phone Number" style="-fx-background-color: transparent; -fx-border-color: #adffc3; -fx-border-width: 0px 0px 2px 0px;" />
+      <TextField fx:id="Nationality" layoutX="316.0" layoutY="208.0" prefHeight="30.0" prefWidth="194.0" promptText="Nationality" style="-fx-background-color: transparent; -fx-border-color: #adffc3; -fx-border-width: 0px 0px 2px 0px;" />
+      <TextField fx:id="Language" layoutX="54.0" layoutY="266.0" prefHeight="30.0" prefWidth="194.0" promptText="Language" style="-fx-background-color: transparent; -fx-border-color: #adffc3; -fx-border-width: 0px 0px 2px 0px;" />
+      <TextArea fx:id="Description" layoutX="51.0" layoutY="328.0" prefHeight="200.0" prefWidth="200.0" promptText="Put your Description" style="-fx-background-color: transparent; -fx-border-color: #adffc3;" />
+      <ImageView fx:id="imageView" fitHeight="109.0" fitWidth="120.0" layoutX="365.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="saveButton" layoutX="419.0" layoutY="462.0" onAction="#AddAdmin" prefHeight="38.0" prefWidth="102.0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 5px;" text="Save" />
+      <Button layoutX="417.0" layoutY="409.0" mnemonicParsing="false" onAction="#uploadImage" prefHeight="28.0" prefWidth="102.0" style="-fx-background-color: transparent; -fx-border-color: #adffc3;" text="Upload Image" />
+      <ImageView fx:id="imageView1" fitHeight="109.0" fitWidth="102.0" layoutX="366.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="308.0" layoutY="409.0" mnemonicParsing="false" onAction="#DeleteImage" prefHeight="28.0" prefWidth="94.0" style="-fx-background-color: #eb1a24; -fx-border-color: #adffc3;" text="Delete Image" />
+      <Button layoutX="304.0" layoutY="462.0" onAction="#cancel" prefHeight="38.0" prefWidth="102.0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: #eb1a24; -fx-text-fill: white; -fx-background-radius: 5px;" text="Cancel" />
+   </children>
+</AnchorPane>

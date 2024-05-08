@@ -1,0 +1,238 @@
+.side  {
+      -fx-background-color:#353A56;
+     /* -fx-border-color:#2207bb;*/
+      -fx-border-width: 2px 2px 2px 2px;
+
+      -rx-border-radius:50px;
+      -fx-background-radius: 50px;
+      -Ex-border-style: solid;}
+.inner_pane  {
+      -fx-background-color: #748CF1;
+      -fx-border-width: 2px;
+      -fx-border-radius: 20px;
+      -fx-background-radius: 20px;
+      -fx-border-style: solid;
+      -fx-border-color: #748CF1;
+}
+
+.most_inner_pane  {
+      -fx-background-color: #6780E2;
+      -fx-border-width: 2px;
+      -fx-border-radius: 20px;
+      -fx-background-radius: 20px;
+}
+.btn_workbench {
+      -fx-background-color: #141313;
+      -fx-border-width: 2px;
+      -fx-border-radius: 20px;
+      -fx-background-radius: 20px; /* Added background radius */
+      -fx-border-style: solid;
+      -fx-border-color: #141313;
+}
+.btn_workbench1
+{
+      -fx-background-color:#353A56;
+      -fx-border-width: 2px;
+      -fx-border-radius: 20px;
+      -fx-background-radius: 20px; /* Added background radius */
+}
+.root  {
+      -fx-background-color:#EAEEF4 ;
+}
+.btn  {
+      -fx-background-color:#EAEEF4 ;
+
+}
+.pane_1  {
+      -fx-background-color: #748CF1;
+      -fx-border-width: 2px;
+      -fx-border-radius: 30px;
+      -fx-background-radius: 30px;
+
+      -fx-border-style: solid;
+      -fx-border-color: #748CF1;
+}
+.progress  {
+      -fx-background-color: #748CF1;
+
+
+      -fx-border-width: 2px 2px 2px 2px;
+      -fx-border-radius: 20px;
+      -fx-background-radius: 20px;
+
+}
+/* Style for the response text field */
+.response-text-field {
+      -fx-background-color: #f9f9f9; /* Light gray background */
+      -fx-border-color: #d9d9d9; /* Lighter border color */
+      -fx-border-width: 1px; /* Border width */
+      -fx-border-radius: 5px; /* Border radius */
+      -fx-font-size: 16px; /* Increased font size */
+      -fx-padding: 12px 16px; /* Increased padding */
+      -fx-pref-width: 400px; /* Preferred width */
+      -fx-pref-height: 120px; /* Preferred height */
+      -fx-text-fill: #333333; /* Text color */
+      -fx-font-family: "Arial"; /* Font family */
+      -fx-background-insets: 0; /* Remove background insets */
+      -fx-transition: all 0.3s ease; /* Animation */
+}
+
+/* Hover effect */
+.response-text-field:hover {
+      -fx-border-color: #007bff; /* Change border color on hover */
+      -fx-box-shadow: 0px 0px 10px #007bff; /* Add shadow effect on hover */
+}
+
+/* Focus effect */
+.response-text-field:focused {
+      -fx-border-color: #007bff; /* Change border color on focus */
+}
+
+
+/* Style for the status combo box */
+.status-combo-box {
+      -fx-background-color: #f9f9f9; /* Light background */
+      -fx-border-color: #cccccc; /* Light border color */
+      -fx-border-width: 1px; /* Border width */
+      -fx-border-radius: 5px; /* Border radius */
+      -fx-font-size: 14px; /* Font size */
+      -fx-padding: 8px 12px; /* Padding around the combo box */
+      -fx-pref-width: 150px; /* Preferred width */
+      -fx-pref-height: 30px; /* Preferred height */
+      -fx-text-fill: #333333; /* Text color */
+      -fx-font-family: "Arial"; /* Font family */
+}
+.status-combo-box .arrow-button {
+      -fx-padding: 0; /* No padding for the arrow button */
+}
+
+.status-combo-box .arrow-button .arrow {
+      -fx-padding: 0 5px; /* Add padding to the arrow for spacing */
+}
+
+.status-combo-box .list-cell {
+      -fx-padding: 8px 12px; /* Padding around each list cell */
+}
+
+/* Style for the submit button */
+.submit-button {
+      -fx-background-color:  #748CF1; /* Blue background */
+      -fx-text-fill: white; /* White text color */
+      -fx-font-size: 14px; /* Font size */
+      -fx-padding: 10px 20px; /* Padding around the button */
+      -fx-border-radius: 5px; /* Border radius */
+}
+
+/* Style for the button when hovered */
+.submit-button:hover {
+      -fx-background-color: #0056b3; /* Darker blue background on hover */
+}
+
+
+.pane_lll1 {
+      -fx-background-color: #353A56;
+      -fx-border-width: 2px 2px 2px 2px;
+      -fx-border-radius: 16px;
+      -fx-background-radius: 16px;
+      -fx-border-style: solid;
+      -fx-border-color: #353A56;
+}
+/* CSS Style for TableView Header */
+.table-header .column-header {
+      -fx-background-color: #748CF1;
+}
+/* Style for the ComboBox */
+.combo-box {
+      -fx-font-size: 14px;
+      -fx-pref-width: 150px;
+
+}
+
+/* Style for the prompt text */
+.combo-box .prompt-text {
+      -fx-font-style: italic;
+      -fx-fill: #999999; /* Light gray color */
+}
+
+/* Style for the dropdown arrow button */
+.combo-box .arrow-button {
+      -fx-background-color: #f0f0f0; /* Light gray background */
+}
+
+/* Style for the dropdown list */
+.combo-box .list-view {
+      -fx-background-color: #ffffff; /* White background */
+      -fx-border-color: #cccccc; /* Light gray border */
+      -fx-border-width: 1px;
+}
+
+/* Style for the list cell */
+.combo-box .list-cell {
+      -fx-font-size: 14px;
+}
+
+/* Style for the selected item */
+.combo-box .list-cell:selected {
+      -fx-background-color: #336699; /* Dark blue background for selected item */
+      -fx-text-fill: #ffffff; /* White text color for selected item */
+}
+.typing-label {
+      -fx-font-family: "OzHandicraft BT ", Helvetica, Arial, sans-serif;
+      -fx-font-size: 20px;
+      -fx-padding: 20px;
+      -fx-border-width: 2px;
+      -fx-background-color: #ffffff; /* Light background color */
+      -fx-border-radius: 5px; /* Rounded corners */
+      -fx-width: 400px;
+      -fx-wrap-text: false; /* Prevent text from wrapping */
+      -fx-overflow: hidden; /* Hide overflow text */
+      -fx-animation: typing 4s steps(40) infinite; /* Use animation for typing effect */
+}
+
+@keyframes typing {
+      from {
+            -fx-label-padding: 0 0 0 0;
+            -fx-text-fill: transparent; /* Start with transparent text */
+      }
+      to {
+            -fx-label-padding: 0 20px 0 0; /* Adjust padding to reveal text */
+            -fx-text-fill: black; /* Show text */
+      }
+}
+/* alert.css */
+/* Apply custom background color and border */
+.custom-alert {
+      -fx-background-color: #f0f0f0;
+      -fx-border-color: #ccc;
+}
+
+/* Style the title text */
+.custom-alert .alert-header {
+      -fx-font-size: 16px;
+      -fx-font-weight: bold;
+      -fx-text-fill: #333;
+}
+
+/* Style the content text */
+.custom-alert .alert-content {
+      -fx-font-size: 14px;
+      -fx-text-fill: #666;
+}
+
+/* Style the buttons */
+.custom-alert .button {
+      -fx-background-color: #007bff;
+      -fx-text-fill: white;
+}
+
+/* Hover effect for buttons */
+.custom-alert .button:hover {
+      -fx-background-color: #0056b3;
+}
+
+.chat-button {
+      -fx-background-color: transparent;
+      -fx-background-insets: 0;
+      -fx-padding: 0;
+      -fx-graphic-text-gap: 0;
+}

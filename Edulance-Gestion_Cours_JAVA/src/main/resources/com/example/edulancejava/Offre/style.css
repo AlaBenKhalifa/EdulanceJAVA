@@ -1,0 +1,241 @@
+.Button {
+    -fx-border-color: transparent;
+    -fx-background-color: white;
+    -fx-border-radius: 2px;
+}
+
+.list-cell {
+    -fx-padding: 15px;
+    -fx-border-color: #eeeeee;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-radius: 5px;
+}
+
+.list-cell:hover {
+}
+
+.list-view {
+    -fx-background-color: #ffffff;
+}
+
+.list-view .scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.list-view .scroll-bar:vertical {
+    -fx-padding: 0;
+}
+
+.list-view .scroll-bar .thumb {
+    -fx-background-color: #bbbbbb;
+    -fx-background-radius: 10px;
+}
+
+.list-view .scroll-bar .thumb:hover {
+    -fx-background-color: #999999;
+}
+
+.list-view .scroll-bar .track {
+    -fx-background-color: transparent;
+}
+
+.list-view .scroll-bar .increment-button,
+.list-view .scroll-bar .decrement-button {
+    -fx-padding: 5px;
+}
+
+.list-view .scroll-bar .increment-arrow,
+.list-view .scroll-bar .decrement-arrow {
+    -fx-background-color: #bbbbbb;
+}
+
+.list-view .scroll-bar .increment-arrow:hover,
+.list-view .scroll-bar .decrement-arrow:hover {
+    -fx-background-color: #999999; /* Arrow color on hover */
+}
+
+
+
+/* Complaint card style */
+.complaint-card {
+    -fx-background-color: #ffffff; /* Card background color */
+    -fx-padding: 20px;
+    -fx-border-width: 1px;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);
+    -fx-min-width: 380px; /* Adjust card width */
+    -fx-max-width: 380px; /* Adjust card width */
+}
+
+.complaint-description {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333; /* Text color */
+}
+
+.priority-label {
+    -fx-padding: 2px 8px; /* Padding */
+    -fx-border-radius: 5px; /* Rounded corners */
+    -fx-font-size: 12px; /* Font size */
+}
+
+.status-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333; /* Adjusted color */
+    -fx-background-color: #ffffff; /* Status label background color */
+    -fx-padding: 5px 10px;
+    -fx-border-radius: 0; /* Reset border radius */
+    -fx-background-radius: 20px 0 20px 0; /* Adjusted background radius */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 0); /* Soft shadow effect */
+    -fx-animation-duration: 0.5s; /* Animation duration */
+    -fx-scale-x: 1; /* Initial scale */
+    -fx-scale-y: 1; /* Initial scale */
+}
+.status-label-progress {
+    -fx-background-color: #FFA500; /* Orange color for 'progress' status */
+}
+
+.status-label-resolved {
+    -fx-background-color: #32CD32; /* Green color for 'resolved' status */
+}
+
+.status-label-default {
+    -fx-background-color: #4CAF50; /* Default color for other statuses */
+}
+
+.delete-button,
+.edit-button {
+    -fx-background-radius: 20px; /* Rounded corners */
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-text-fill: #ffffff;
+}
+
+.delete-button {
+    -fx-background-color: #dc3545; /* Delete button background color (red) */
+}
+
+/* Animation */
+.status-label:hover {
+    -fx-scale-x: 1.1; /* Hover scale x */
+    -fx-scale-y: 1.1; /* Hover scale y */
+    -fx-transition: scale 0.5s; /* Transition animation */
+}
+
+
+.edit-button {
+    -fx-background-color: #007bff; /* Edit button background color (blue) */
+}
+
+/* Additional styling */
+.your-dialog-pane-style {
+    -fx-background-color: #f0f0f0; /* Background color */
+}
+
+.your-header-label-style {
+    -fx-font-size: 24px; /* Increased font size */
+    -fx-font-weight: bold; /* Font weight */
+}
+
+.your-content-label-style {
+    -fx-font-size: 16px; /* Increased font size */
+}
+
+.tab-header {
+    -fx-background-color: #6A5ACD; /* Tab header background color */
+    -fx-padding: 10px 20px; /* Padding */
+    -fx-font-size: 18px; /* Font size */
+    -fx-text-fill: #ffffff; /* Text color */
+    -fx-background-radius: 5px; /* Rounded corners */
+}
+/* style.css */
+
+/* Customize the background color of the alert */
+.alert {
+    -fx-background-color: #f0f0f0; /* Light gray background */
+}
+
+/* Customize the header text */
+.dialog-pane .header-panel .header {
+    -fx-font-size: 16px; /* Larger font size */
+    -fx-font-weight: bold; /* Bold text */
+    -fx-text-fill: #333; /* Dark gray text color */
+}
+
+/* Customize the content text */
+.dialog-pane .content {
+    -fx-font-size: 14px; /* Medium font size */
+    -fx-text-fill: #666; /* Gray text color */
+}
+
+.dialog-pane .button-bar .button {
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+}
+
+.dialog-pane .button-bar .button:hover {
+    -fx-background-color: #0056b3;
+}
+
+/* Table View */
+.table-view {
+    -fx-background-color: #f0f0f0; /* Light gray background */
+}
+
+/* Table Header */
+.table-header .column-header {
+    -fx-background-color: #353A56; /* Dark blue background */
+    -fx-text-fill: white; /* White text color */
+    -fx-font-size: 14px; /* Font size */
+}
+
+/* Text Fields */
+.text-field {
+    -fx-background-color: #ffffff; /* White background */
+    -fx-border-color: #cccccc; /* Light border color */
+    -fx-border-width: 1px; /* Border width */
+    -fx-border-radius: 5px; /* Border radius */
+    -fx-padding: 8px; /* Padding */
+    -fx-font-size: 14px; /* Font size */
+}
+
+/* Respond Button */
+/* Respond Button */
+
+
+/* Respond Button */
+/* Respond Button */
+.respond-button {
+    -fx-background-color: #353A56; /* Dark blue background */
+    -fx-text-fill: white; /* White text color */
+    -fx-font-size: 14px; /* Font size */
+    -fx-pref-width: 160px; /* Preferred width */
+    -fx-background-radius: 4px; /* Border radius */
+    -fx-padding: 8px 16px; /* Padding */
+    -fx-border-width: 1px; /* Border width */
+    -fx-border-color: #2c2f45; /* Darker border color */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 3, 0.0, 0, 1); /* Add shadow effect */
+    -fx-alignment: center; /* Center align text */
+}
+
+.respond-button:hover {
+    -fx-background-color: #141313; /* Darker blue background on hover */
+}
+
+/* Display Button */
+.display-button {
+    -fx-background-color: #748CF1; /* Light blue background */
+    -fx-text-fill: white; /* White text color */
+    -fx-font-size: 14px; /* Font size */
+    -fx-pref-width: 140px; /* Preferred width */
+    -fx-background-radius: 4px; /* Border radius */
+    -fx-padding: 8px 16px; /* Padding */
+    -fx-border-width: 1px; /* Border width */
+    -fx-border-color: #567bc3; /* Darker border color */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 3, 0.0, 0, 1); /* Add shadow effect */
+    -fx-alignment: center; /* Center align text */
+}
+
+.display-button:hover {
+    -fx-background-color: #1e88e5; /* Darker blue background on hover */
+}

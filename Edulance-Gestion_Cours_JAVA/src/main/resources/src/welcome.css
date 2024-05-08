@@ -1,0 +1,26 @@
+.background{
+        -fx-background-color: #ececec;
+        -fx-width: auto;
+        -fx-height: auto;
+
+}
+.header{
+        -fx-text-fill: #4FA095;
+        -fx-font-family: "Arial Black";
+
+}
+.background_container{
+        -fx-background-color: white;
+}
+.getting_started_button{
+        -fx-text-fill: #153462;
+        -fx-background-color: #cecece;
+
+        -fx-font-family: Montserrat sans-serif;
+        -fx-font-size: 21px;
+        -fx-font-weight: 600;
+        -fx-padding: 40px 15px;
+        -fx-background-color: #2a74ff;
+        -fx-background-radius: 50% 50% 50% 50%;
+
+}

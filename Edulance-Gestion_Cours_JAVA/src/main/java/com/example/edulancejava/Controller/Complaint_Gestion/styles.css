@@ -1,0 +1,73 @@
+/* Message area */
+.message-area {
+    -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI", sans-serif; /* Modern font */
+    -fx-text-fill: #333333; /* Dark gray text color */
+    -fx-background-color: #f9f9f9; /* Light gray background color */
+    -fx-padding: 10px;
+    -fx-border-radius: 8px; /* Rounded corners */
+    -fx-border-width: 2px;
+    -fx-border-color: #cccccc; /* Light gray border color */
+    -fx-pref-height: 200px; /* Set preferred height */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 3); /* Soft drop shadow */
+}
+
+/* Input box */
+.input-box {
+    -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI", sans-serif; /* Modern font */
+    -fx-text-fill: #333333; /* Dark gray text color */
+    -fx-background-color: #ffffff; /* White background color */
+    -fx-padding: 10px;
+    -fx-border-radius: 8px; /* Rounded corners */
+    -fx-border-width: 2px;
+    -fx-border-color: #cccccc; /* Light gray border color */
+    -fx-pref-height: 40px; /* Set preferred height */
+}
+
+/* Input box focus effect */
+.input-box:focused {
+    -fx-border-color: #007bff; /* Blue border color when focused */
+    -fx-background-insets: -2, -1, 0, 1;
+    -fx-background-radius: 10px; /* Smooth focus effect */
+}
+.root {
+    -fx-font-family: Arial, sans-serif;
+}
+
+/* Styling for the chat area */
+.text-area {
+    -fx-pref-height: 200px;
+    -fx-min-height: 200px;
+    -fx-pref-width: 100%;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-color: #f9f9f9;
+}
+
+/* Styling for the input field */
+.text-field {
+    -fx-pref-height: 30px;
+    -fx-pref-width: 100%;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-color: #fff;
+    -fx-padding: 5px;
+}
+
+/* Styling for the send button */
+.button {
+    -fx-background-color: #007bff;
+    -fx-text-fill: #fff;
+    -fx-pref-height: 30px;
+    -fx-min-height: 30px;
+    -fx-pref-width: 100px;
+    -fx-border-radius: 5px;
+    -fx-cursor: pointer;
+}
+
+.button:hover {
+    -fx-background-color: #0056b3;
+}

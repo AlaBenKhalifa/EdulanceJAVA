@@ -1,0 +1,36 @@
+.search-box {
+    -fx-padding : 0 0 0 35;
+    -fx-background-color: transparent;
+        -fx-border-radius: 50px;
+        -fx-border-width: 1px;
+        -fx-border-color: black;
+    -fx-outline: none;
+    -fx-border: none;
+}
+.font{
+    -fx-text-fill: #475364;
+    -fx-background-color: transparent;
+}
+.font:hover{
+    -fx-text-fill: #4FA095;
+    -fx-outline: none;
+    -fx-border: none;
+    -fx-border-color: #660099;
+    -fx-border-width: 0px 0px 3px 0px;
+}
+.sign_up{
+    -fx-text-fill: white;
+    -fx-font-family: "AGA Arabesque";
+    -fx-font-size: 12;
+    -fx-background-color: #2a74ff;
+    -fx-background-radius: 10% 10% 10% 10%;
+}
+.sign_up:hover {
+    -fx-text-fill: rgba(0, 0, 0, 0.37);
+    -fx-font-family: "AGA Arabesque";
+    -fx-font-size: 12;
+    -fx-background-color: #1365fc;
+    -fx-background-radius: 10% 10% 10% 10%;
+
+
+}

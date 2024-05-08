@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="735.0" prefWidth="1248.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edulancejava.Controller.Complaint_Gestion.ApplicationViewComplaintsController">
+    <children>
+        <VBox prefHeight="722.0" prefWidth="282.0">
+            <children>
+                <AnchorPane fx:id="side" prefHeight="746.0" prefWidth="278.0" styleClass="side" stylesheets="@style1.css">
+                    <children>
+                        <Pane fx:id="inner_pane" layoutX="6.0" layoutY="33.0" prefHeight="70.0" prefWidth="266.0" styleClass="inner_pane" stylesheets="@style1.css">
+                            <children>
+                                <ImageView fitHeight="17.0" fitWidth="84.0" layoutX="23.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../example/icons/logoedulance.png" />
+                                    </image>
+                                </ImageView>
+                                <Pane fx:id="most_inner_pane" layoutX="207.0" layoutY="11.0" prefHeight="54.0" prefWidth="32.0" styleClass="most_inner_pane" stylesheets="@style1.css">
+                                    <children>
+                                        <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="-1.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../example/icons/menudashboard.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </Pane>
+                            </children>
+                        </Pane>
+                        <Button fx:id="btn_workbench" layoutX="43.0" layoutY="141.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="198.0" styleClass="btn_workbench" stylesheets="@style1.css" text="Workbench" textFill="WHITE">
+                            <graphic>
+                                <ImageView fitHeight="32.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../example/icons/homef.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <font>
+                                <Font name="Century Gothic" size="13.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="Button" layoutX="69.0" layoutY="213.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="143.0" styleClass="btn_workbench1" stylesheets="@style1.css" text="Complaints" textFill="WHITE">
+                            <graphic>
+                                <ImageView fitHeight="32.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../example/icons/filterdash.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <font>
+                                <Font name="Century Gothic" size="13.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="btn_workbench2" layoutX="55.0" layoutY="282.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="192.0" styleClass="btn_workbench1" stylesheets="@style1.css" text="Management" textFill="WHITE">
+                            <graphic>
+                                <ImageView fitHeight="32.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../example/icons/MANAGEMENT.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <font>
+                                <Font name="Century Gothic" size="13.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="btn_workbench11" layoutX="90.0" layoutY="429.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="120.0" styleClass="btn_workbench1" stylesheets="@style1.css" text="Calendar" textFill="WHITE">
+                            <graphic>
+                                <ImageView fitHeight="32.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../example/icons/Calendar.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <font>
+                                <Font name="Century Gothic" size="13.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="btn_workbench111" layoutX="86.0" layoutY="359.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" styleClass="btn_workbench1" stylesheets="@style1.css" text="Unlock" textFill="WHITE">
+                            <graphic>
+                                <ImageView fitHeight="32.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../example/icons/Unlock.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <font>
+                                <Font name="Century Gothic" size="13.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="btn_workbench112" layoutX="90.0" layoutY="499.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="120.0" styleClass="btn_workbench1" stylesheets="@style1.css" text="Search" textFill="WHITE">
+                            <graphic>
+                                <ImageView fitHeight="32.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../example/icons/search.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <font>
+                                <Font name="Century Gothic" size="13.0" />
+                            </font>
+                        </Button>
+                        <ImageView fitHeight="38.0" fitWidth="192.0" layoutX="52.0" layoutY="621.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../example/icons/logoedulance.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+        <Pane prefHeight="691.0" prefWidth="973.0">
+            <children>
+                <Pane layoutX="167.0" layoutY="25.0" prefHeight="63.0" prefWidth="791.0">
+                    <children>
+                        <TextField layoutX="482.0" layoutY="19.0" promptText="Search">
+                            <font>
+                                <Font name="Century Gothic" size="15.0" />
+                            </font>
+                        </TextField>
+                        <ImageView fitHeight="29.0" fitWidth="32.0" layoutX="445.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../example/icons/search.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="btn" layoutX="703.0" layoutY="19.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="44.0" styleClass="btn" stylesheets="@style1.css">
+                            <graphic>
+                                <ImageView fitHeight="21.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../example/icons/settings.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="btn1" layoutX="742.0" layoutY="19.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="44.0" styleClass="btn" stylesheets="@style1.css">
+                            <graphic>
+                                <ImageView fx:id="btn1Profile" fitHeight="21.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../example/icons/manfreelancing.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </children>
+                </Pane>
+                <Label layoutX="40.0" layoutY="123.0" text="Reclamations List">
+                    <font>
+                        <Font name="Century Gothic Bold" size="36.0" />
+                    </font>
+                </Label>
+                <Label layoutX="42.0" layoutY="170.0" text="Let's Respond">
+                    <font>
+                        <Font name="Century Gothic" size="16.0" />
+                    </font>
+                </Label>
+
+                <Pane layoutY="4.0" prefHeight="691.0" prefWidth="993.0">
+
+                    <children>
+                        <TableView fx:id="complaintsTable" layoutX="6.0" layoutY="263.0" prefHeight="414.0" prefWidth="950.0" styleClass="table-header">
+
+                            <columns>
+
+                                <TableColumn fx:id="dateColumn" prefWidth="63.999998569488525" text="Date" />
+                                <TableColumn fx:id="typeColumn" prefWidth="78.39997100830078" text="Type" />
+                                <TableColumn fx:id="descriptionColumn" prefWidth="182.39993286132812" text="Description" />
+                                <TableColumn fx:id="imageColumn" maxWidth="371.9999694824219" prefWidth="138.4000244140625" text="More information" />
+                                <TableColumn fx:id="priorityColumn" maxWidth="122.39987182617188" prefWidth="75.19998168945312" text="Priority" />
+                                <TableColumn fx:id="StatusColumn" maxWidth="109.5999755859375" minWidth="0.0" prefWidth="74.39996337890625" text="Status" />
+
+                            </columns>
+                        </TableView>
+                        <TextField fx:id="searchByTypeTextField" layoutX="31.0" layoutY="207.0" promptText="Search by type" />
+                        <TextField fx:id="searchByDateTextField" layoutX="216.0" layoutY="207.0" promptText="Search by date" />
+
+
+                    </children>
+                </Pane>
+                <Button fx:id="btn2" layoutX="164.0" layoutY="167.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="14.0" styleClass="btn" stylesheets="@style1.css">
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+        </Pane>
+        <Button fx:id="acceptButton" text="Accept Conversation" onAction="#acceptConversation"/>
+
+
+    </children>
+
+</HBox>
