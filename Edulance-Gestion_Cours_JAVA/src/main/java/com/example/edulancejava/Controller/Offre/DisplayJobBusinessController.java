@@ -75,7 +75,7 @@ public class DisplayJobBusinessController implements Initializable {
                         Label experienceLabel = createLabel("Experience Level: " + offre.getExperienceLevel(), "#555555", FontWeight.NORMAL, 14);
                         Label typeLabel = createLabel("Type of Offer: " + offre.getTypeOffre(), "#555555", FontWeight.NORMAL, 14);
 
-                        Button ApplyButton = createButton("Apply", "#4CAF50", event -> handleApplyButton(offre));
+                        Button ApplyButton = createButton("Apply", "#4CAF50", event -> handleApplyButton(event));
 
                         HBox buttonContainer = new HBox(10, ApplyButton);
                         buttonContainer.setAlignment(Pos.CENTER_RIGHT);
@@ -110,10 +110,27 @@ public class DisplayJobBusinessController implements Initializable {
             }
         }
 
-        private void handleApplyButton(Offre offre) {
-            new send_SMS();
-        }
-        private void loadJobs() {
+    @FXML
+    void handleApplyButton(ActionEvent event) {
+        sendSMS();
+    }
+
+    private void sendSMS() {
+        com.twilio.Twilio.init("AC07750a961cb0daec3d886928fe7f5887", "ea1951b9544b3103fb41a5b4bfaabc89");
+
+        // Convert the user's phone number to a String
+        String strNumber = String.valueOf(UserSession.getUser().getPhoneNumber());
+
+        com.twilio.rest.api.v2010.account.Message message = com.twilio.rest.api.v2010.account.Message.creator(
+                new com.twilio.type.PhoneNumber("+216" + strNumber),
+                new com.twilio.type.PhoneNumber("+12176155863"),
+                "Hello " + UserSession.getUser().getName() + ", You have been applied successfully to our company. BEST OF LUCK !"
+        ).create();
+
+        // You can add further logic here, such as handling success/failure of sending the message
+    }
+
+    private void loadJobs() {
             try {
                 GetJobsQuery query = new GetJobsQuery();
                 List<Offre> jobs;
@@ -128,7 +145,6 @@ public class DisplayJobBusinessController implements Initializable {
                 e.printStackTrace();
             }
         }
-
 
         private VBox createPage(int pageIndex) {
             int fromIndex = pageIndex * itemsPerPage;
